@@ -1,0 +1,40 @@
+﻿@using Core.ViewModels
+@model IEnumerable<LinkButton>
+@{
+
+}
+
+@if (Model.Any())
+{
+    <div class="row" style="padding-bottom: 3em;">
+        <div class="d-flex justify-content-center">
+
+            <div class="d-grid gap-2">
+                @foreach (var linkButton in Model)
+                {
+                    <a 
+                        href="@linkButton.Link" 
+                        class="btn btn-primary btn-lg @linkButton.StyleReference"
+                    @if (linkButton.ToolTipText != null)
+                    {
+                        @:data-bs-toggle="tooltip"
+                        @:data-bs-placement="right"
+                        @:data-bs-title="@linkButton.ToolTipText"
+                    }>
+                        @if (linkButton.IconReference != null)
+                        {
+                            <img align="left" src="/icons/@(linkButton.IconReference).svg" class="img-btn align-middle">
+                        }
+                        <span
+                        @if (linkButton.IconReference != null)
+                        {
+                            @:class="img-btn-text"
+                        }    
+                        >@linkButton.Name</span>
+                    </a>
+                }
+            </div>
+
+        </div>
+    </div>
+}

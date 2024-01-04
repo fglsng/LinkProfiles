@@ -1,0 +1,20 @@
+﻿@using Core.ViewModels
+@model ProfileBasePageModel
+@{
+
+}
+
+<div class="row">
+    @if (Model.Name != null)
+    {
+        <h3 class="d-flex justify-content-center name-text">@Model.Name</h3>
+    }
+    @if (Model.DescriptionLine1 != null)
+    {
+        <div class="card-text d-flex justify-content-center description-text">@Model.DescriptionLine1</div>
+    }
+    @if (Model.DescriptionLine2 != null)
+    {
+        <div class="card-text d-flex justify-content-center description-text">@Model.DescriptionLine2</div>
+    }
+</div>
