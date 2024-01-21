@@ -10,7 +10,7 @@ namespace Web.Sk.Areas.Details.Pages
 
         public void OnGet()
         {
-            ViewData["background-reference"] = "main-area-soren";
+            ViewData["background-reference"] = "main-bg";
         }
     }
 }
